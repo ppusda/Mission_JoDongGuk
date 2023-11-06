@@ -30,8 +30,9 @@ public class QuotesUtil {
         System.out.print(Phrase.INPUT_AUTHOR.getMessage());
         String author = scanner.nextLine();
 
-        quotes.add(new Quote(getLastId() + 1, content, author));
-        System.out.println(quotes.size() + Phrase.ADD_QUOTE.getMessage());
+        Long id = getLastId() + 1;
+        quotes.add(new Quote(id, content, author));
+        System.out.println(id + Phrase.ADD_QUOTE.getMessage());
     }
 
     public void printQuote() {
