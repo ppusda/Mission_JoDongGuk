@@ -38,12 +38,13 @@ public class QuotesUtil {
         System.out.println(Phrase.QUOTE_LIST.getMessage());
         System.out.println(Phrase.QUOTE_LINE.getMessage());
 
-        quotes.stream().forEach(quote ->
-                System.out.println(
-                        quote.getId() + Phrase.QUOTE_SPLIT.getMessage()
-                                + quote.getAuthor() + Phrase.QUOTE_SPLIT.getMessage()
-                                + quote.getContent()));
-
+        if(!quotes.isEmpty()){
+            quotes.stream().forEach(quote ->
+                    System.out.println(
+                            quote.getId() + Phrase.QUOTE_SPLIT.getMessage()
+                                    + quote.getAuthor() + Phrase.QUOTE_SPLIT.getMessage()
+                                    + quote.getContent()));
+        }
     }
 
     public Long getLastId() {
@@ -93,6 +94,10 @@ public class QuotesUtil {
         } else {
             System.out.println(id + Phrase.QUOTE_SEARCH_FAIL.getMessage());
         }
+    }
+
+    public void saveQuotes() {
+        fileUtil.fileSave(quotes);
     }
 
     public void loadQuotes() {

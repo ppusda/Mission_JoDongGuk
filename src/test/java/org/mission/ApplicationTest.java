@@ -154,4 +154,24 @@ class ApplicationTest {
 
         scanner.close();
     }
+
+    @Test
+    @DisplayName("Lv10 - 파일 로드 후 데이터를 수정하여 저장한다.")
+    public void start_fileLoad_editData_build_end() {
+        Scanner scanner = TestUtil.genScanner("""
+                목록
+                등록
+                현재를 사랑하라.
+                작자미상
+                수정?id=1
+                미래를 사랑하라.
+                누군가
+                목록
+                빌드
+                종료
+                        """.stripIndent());
+        new Application(scanner).start();
+
+        scanner.close();
+    }
 }

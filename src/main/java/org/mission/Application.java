@@ -43,6 +43,11 @@ public class Application {
                 case "수정":
                     quotesUtil.editQuote(command.getQueryMap());
                     break;
+                case "빌드": case "저장":
+                    quotesUtil.saveQuotes();
+                    break;
+                default:
+                    System.out.println(Phrase.WRONG_COMMAND.getMessage());
             }
         }
     }
