@@ -10,7 +10,8 @@ public enum Phrase {
     END("앱 종료"),
     INPUT_QUOTE("명언 : "),
     INPUT_AUTHOR("작가 : "),
-    ADD_QUOTE("번 명언이 등록되었습니다.");
+    ADD_QUOTE("번 명언이 등록되었습니다."),
+    LINE_BREAK("\n");
 
     private final String message;
 }

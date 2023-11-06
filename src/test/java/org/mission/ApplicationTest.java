@@ -22,7 +22,21 @@ class ApplicationTest {
 
     @Test
     @DisplayName("Lv2 - 앱이 시작되고 등록을 입력 시 명언과 작가를 입력할 수 있다.")
-    public void start_input_end() {
+    public void start_quoteInput_end() {
+        Scanner scanner = TestUtil.genScanner("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                종료
+                        """.stripIndent());
+        new Application(scanner).start();
+
+        scanner.close();
+    }
+
+    @Test
+    @DisplayName("Lv3 - 앱이 시작되고 명언을 등록 시 명언 번호를 출력한다.")
+    public void start_quoteInput_printId_end() {
         Scanner scanner = TestUtil.genScanner("""
                 등록
                 현재를 사랑하라.
