@@ -15,7 +15,7 @@ public class Command {
         this.command = command.trim();
         this.action = command;
 
-        if(command.contains("?")) {
+        if(command.matches(".+\\?id\\=[0-9]+")) {
             String[] commandSplit = command.split("\\?");
             this.action = commandSplit[0].trim();
             String query = commandSplit[1];
@@ -37,5 +37,9 @@ public class Command {
     public void setQueryMap(String query) {
         String[] split = query.split("=");
         queryMap.put(split[0], split[1]);
+    }
+
+    public boolean checkQueryMap() {
+        return queryMap.isEmpty();
     }
 }

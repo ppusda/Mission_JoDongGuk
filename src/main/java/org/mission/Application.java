@@ -38,17 +38,29 @@ public class Application {
                     quotesUtil.printQuote();
                     break;
                 case "삭제":
+                    if(command.checkQueryMap()) {
+                        inputWrongCommand();
+                        break;
+                    }
                     quotesUtil.removeQuote(command.getQueryMap());
                     break;
                 case "수정":
+                    if(command.checkQueryMap()) {
+                        inputWrongCommand();
+                        break;
+                    }
                     quotesUtil.editQuote(command.getQueryMap());
                     break;
                 case "빌드": case "저장":
                     quotesUtil.saveQuotes();
                     break;
                 default:
-                    System.out.println(Phrase.WRONG_COMMAND.getMessage());
+                    inputWrongCommand();
             }
         }
+    }
+
+    public void inputWrongCommand() {
+        System.out.println(Phrase.WRONG_COMMAND.getMessage());
     }
 }
