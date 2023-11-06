@@ -1,4 +1,4 @@
-package org.mission;
+package org.mission.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

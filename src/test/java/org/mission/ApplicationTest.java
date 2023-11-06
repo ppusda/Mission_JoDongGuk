@@ -1,12 +1,14 @@
 package org.mission;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Scanner;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mission.util.QuotesUtil;
 
 class ApplicationTest {
+
+    private QuotesUtil quotesUtil;
 
     @Test
     @DisplayName("Lv1 - 앱이 시작되고 종료를 입력하면 앱이 종료된다.")
@@ -32,6 +34,8 @@ class ApplicationTest {
         new Application(scanner).start();
 
         scanner.close();
+
+        Assertions.assertEquals();
     }
 
     @Test

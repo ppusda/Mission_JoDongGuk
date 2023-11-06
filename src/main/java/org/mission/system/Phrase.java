@@ -1,4 +1,4 @@
-package org.mission;
+package org.mission.system;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

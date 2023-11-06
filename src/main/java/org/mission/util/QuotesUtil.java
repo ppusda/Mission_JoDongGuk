@@ -1,10 +1,12 @@
-package org.mission;
+package org.mission.util;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import lombok.Getter;
+import org.mission.domain.Quote;
+import org.mission.system.Phrase;
 
 @Getter
 public class QuotesUtil {
