@@ -101,7 +101,9 @@ public class QuotesUtil {
     }
 
     public void loadQuotes() {
-        quotes = fileUtil.fileLoad();
+        if(fileUtil.fileLoad() != null) {
+            quotes = fileUtil.fileLoad();
+        }
     }
 
 }
