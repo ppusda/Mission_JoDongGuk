@@ -22,16 +22,19 @@ public class Application {
             System.out.print(Phrase.INPUT_COMMAND.getMessage());
             command = new Command(scanner.nextLine());
 
-            switch (command.getCommand()) {
+            switch (command.getAction()) {
                 case "등록":
-                    quotesUtil.addQuotes();
+                    quotesUtil.addQuote();
                     break;
                 case "종료":
                     System.out.println(Phrase.END.getMessage());
                     flag = false;
                     break;
                 case "목록":
-                    quotesUtil.printQuotes();
+                    quotesUtil.printQuote();
+                    break;
+                case "삭제":
+                    quotesUtil.removeQuote(command.getQueryMap());
                     break;
             }
         }
