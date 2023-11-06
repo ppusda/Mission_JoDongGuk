@@ -103,4 +103,24 @@ class ApplicationTest {
         scanner.close();
     }
 
+    @Test
+    @DisplayName("Lv7 - 명언을 등록 후 존재하지 않는 명언 번호를 삭제한다.")
+    public void start_quoteInput_remove_quoteFail_end() {
+        Scanner scanner = TestUtil.genScanner("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                등록
+                미래를 사랑하라.
+                누군가
+                목록
+                삭제?id=3
+                목록
+                종료
+                        """.stripIndent());
+        new Application(scanner).start();
+
+        scanner.close();
+    }
+
 }
