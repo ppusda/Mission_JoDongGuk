@@ -48,4 +48,21 @@ class ApplicationTest {
         scanner.close();
     }
 
+    @Test
+    @DisplayName("Lv4 - 앱이 시작되고 명언을 등록 시 명언 번호가 증가한다.")
+    public void start_quoteInput_printId_up_end() {
+        Scanner scanner = TestUtil.genScanner("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                등록
+                미래를 사랑하라.
+                누군가
+                종료
+                        """.stripIndent());
+        new Application(scanner).start();
+
+        scanner.close();
+    }
+
 }
