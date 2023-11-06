@@ -1,5 +1,6 @@
 package org.mission.util;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,11 +13,14 @@ import org.mission.system.Phrase;
 public class QuotesUtil {
 
     private final Scanner scanner;
-    private final List<Quote> quotes;
+    private final FileUtil fileUtil;
+
+    private List<Quote> quotes;
 
     public QuotesUtil(Scanner scanner) {
         this.scanner = scanner;
         this.quotes = new ArrayList<>();
+        this.fileUtil = new FileUtil();
     }
 
     public void addQuote() {
@@ -89,6 +93,10 @@ public class QuotesUtil {
         } else {
             System.out.println(id + Phrase.QUOTE_SEARCH_FAIL.getMessage());
         }
+    }
+
+    public void loadQuotes() {
+        quotes = fileUtil.fileLoad();
     }
 
 }

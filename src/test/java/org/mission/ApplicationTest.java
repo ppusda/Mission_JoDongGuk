@@ -34,8 +34,6 @@ class ApplicationTest {
         new Application(scanner).start();
 
         scanner.close();
-
-        Assertions.assertEquals();
     }
 
     @Test
@@ -137,6 +135,18 @@ class ApplicationTest {
                 수정?id=1
                 미래를 사랑하라.
                 누군가
+                목록
+                종료
+                        """.stripIndent());
+        new Application(scanner).start();
+
+        scanner.close();
+    }
+
+    @Test
+    @DisplayName("Lv9 - 앱 시작 후 데이터를 로드하여 목록에 데이터가 있어야 한다.")
+    public void start_fileLoad_quoteList_end() {
+        Scanner scanner = TestUtil.genScanner("""
                 목록
                 종료
                         """.stripIndent());

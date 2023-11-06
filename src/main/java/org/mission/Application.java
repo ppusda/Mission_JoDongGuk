@@ -20,6 +20,7 @@ public class Application {
     public void start() {
         System.out.println(Phrase.START.getMessage());
         quotesUtil = new QuotesUtil(scanner);
+        quotesUtil.loadQuotes();
 
         while (flag) {
             System.out.print(Phrase.INPUT_COMMAND.getMessage());
