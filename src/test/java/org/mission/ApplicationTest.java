@@ -20,4 +20,18 @@ class ApplicationTest {
         scanner.close();
     }
 
+    @Test
+    @DisplayName("Lv2 - 앱이 시작되고 등록을 입력 시 명언과 작가를 입력할 수 있다.")
+    public void start_input_end() {
+        Scanner scanner = TestUtil.genScanner("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                종료
+                        """.stripIndent());
+        new Application(scanner).start();
+
+        scanner.close();
+    }
+
 }
