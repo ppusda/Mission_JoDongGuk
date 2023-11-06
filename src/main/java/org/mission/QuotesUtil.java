@@ -48,11 +48,11 @@ public class QuotesUtil {
         }
     }
 
-    public boolean phraseCheck(Long id) {
+    public boolean quoteCheck(Long id) {
         return quotes.stream().anyMatch(quotation -> quotation.getId() == id.intValue());
     }
 
-    public Quote getPhrase(Long id) {
+    public Quote getQuote(Long id) {
         return quotes.stream().parallel().filter(p -> p.getId() == id.intValue()).findAny()
                 .orElseThrow(IllegalAccessError::new);
     }
@@ -60,9 +60,30 @@ public class QuotesUtil {
     public void removeQuote(Map<String, String> queryMap) {
         Long id = Long.parseLong(queryMap.get("id"));
 
-        if (phraseCheck(id)) {
-            quotes.remove(getPhrase(id));
+        if (quoteCheck(id)) {
+            quotes.remove(getQuote(id));
             System.out.println(id + Phrase.QUOTE_REMOVE_SUCCESS.getMessage());
+        } else {
+            System.out.println(id + Phrase.QUOTE_SEARCH_FAIL.getMessage());
+        }
+    }
+
+    public void editQuote(Map<String, String> queryMap) {
+        Long id = Long.parseLong(queryMap.get("id"));
+
+        if (quoteCheck(id)) {
+            Quote quote = getQuote(id);
+
+            System.out.println(Phrase.EXISTING_QUOTE.getMessage() + quote.getContent());
+            System.out.print(Phrase.INPUT_QUOTE.getMessage());
+            String editContent = scanner.nextLine();
+
+            System.out.println(Phrase.EXISTING_QUOTE.getMessage() + quote.getAuthor());
+            System.out.print(Phrase.INPUT_QUOTE.getMessage());
+            String editAuthor = scanner.nextLine();
+
+            quote.setContent(editContent);
+            quote.setAuthor(editAuthor);
         } else {
             System.out.println(id + Phrase.QUOTE_SEARCH_FAIL.getMessage());
         }

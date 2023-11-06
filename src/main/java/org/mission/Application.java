@@ -36,6 +36,9 @@ public class Application {
                 case "삭제":
                     quotesUtil.removeQuote(command.getQueryMap());
                     break;
+                case "수정":
+                    quotesUtil.editQuote(command.getQueryMap());
+                    break;
             }
         }
     }

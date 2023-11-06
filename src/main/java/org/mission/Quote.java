@@ -1,11 +1,14 @@
 package org.mission;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@RequiredArgsConstructor @Getter
+@Getter @Setter
+@AllArgsConstructor
 public class Quote {
     private final Long id;
-    private final String content;
-    private final String author;
+    private String content;
+    private String author;
+
 }

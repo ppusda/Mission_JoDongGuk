@@ -16,8 +16,9 @@ public enum Phrase {
     QUOTE_LINE("-------------------"),
     QUOTE_SPLIT(" / "),
     QUOTE_REMOVE_SUCCESS("번 명언이 삭제되었습니다."),
-    QUOTE_SEARCH_FAIL("번 명언은 존재하지 않습니다.");
-
+    QUOTE_SEARCH_FAIL("번 명언은 존재하지 않습니다."),
+    EXISTING_QUOTE("명언(기존) : "),
+    EXISTING_AUTHOR("작가(기존) : ");
 
     private final String message;
 }

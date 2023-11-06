@@ -123,4 +123,21 @@ class ApplicationTest {
         scanner.close();
     }
 
+    @Test
+    @DisplayName("Lv8 - 명언을 등록 후 명언을 수정한다.")
+    public void start_quoteInput_editQuote_end() {
+        Scanner scanner = TestUtil.genScanner("""
+                등록
+                현재를 사랑하라.
+                작자미상
+                수정?id=1
+                미래를 사랑하라.
+                누군가
+                목록
+                종료
+                        """.stripIndent());
+        new Application(scanner).start();
+
+        scanner.close();
+    }
 }
