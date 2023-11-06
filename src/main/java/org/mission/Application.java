@@ -30,6 +30,9 @@ public class Application {
                     System.out.println(Phrase.END.getMessage());
                     flag = false;
                     break;
+                case "목록":
+                    quotesUtil.printQuotes();
+                    break;
             }
         }
     }

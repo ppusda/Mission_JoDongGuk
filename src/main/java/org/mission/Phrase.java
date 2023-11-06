@@ -11,7 +11,10 @@ public enum Phrase {
     INPUT_QUOTE("명언 : "),
     INPUT_AUTHOR("작가 : "),
     ADD_QUOTE("번 명언이 등록되었습니다."),
-    LINE_BREAK("\n");
+    LINE_BREAK("\n"),
+    QUOTE_LIST("번호 / 작가 / 명언"),
+    QUOTE_LINE("-------------------"),
+    QUOTE_SPLIT(" / ");
 
     private final String message;
 }
